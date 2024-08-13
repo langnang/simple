@@ -18,3 +18,5 @@
 - web-hunt
 - web-page
 - web-site
+- shop
+- market
