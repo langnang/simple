@@ -4,8 +4,8 @@ import { lifecycleMixin } from "./lifecycle";
 import { renderMixin } from "./render";
 import { initGlobalAPI } from "../global-api/index";
 import { stateMixin } from "./state";
-import { compileToFunction } from "./../../compiler/index";
-import { patch, createElm } from "./../vdom/patch";
+import { compileToFunction } from "../../compiler/index";
+import { patch, createElm } from "../vdom/patch";
 
 function Vue(options) {
   // console.group("🚀 ~ file: src\\core\\instance\\index.js:9 ~ Vue ~ 构造Vue实例 ~ arguments", { options });
