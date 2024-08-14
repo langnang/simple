@@ -16,12 +16,12 @@ const iFrameOnLoad = (element) => {
   }
 }
 
-$(document).on('click', '.list-group-item', function (element) {
-  console.log(`click .list-group-item`, element)
+$(document).on('click', '.nav-item', function (element) {
+  // console.log(`click .list-group-item`, element)
   const src = $(element.target).attr('data-src');
-  console.log(`click .list-group-item`, src)
+  // console.log(`click .list-group-item`, src)
   $('#iframe').attr('src', src)
-  console.log($(element.target).siblings().removeClass('active'))
-  $(element.target).siblings().removeClass('active')
+  // console.log($(element.target).removeClass('active'))
+  $('#sidebarMenu .nav-link').removeClass('active')
   $(element.target).addClass('active')
 })
