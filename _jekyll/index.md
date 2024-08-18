@@ -21,5 +21,5 @@
 - web-site:
 - shop:
 - market:
-- recipe: 食谱
+- recipe: 食谱、配方
 - video:
