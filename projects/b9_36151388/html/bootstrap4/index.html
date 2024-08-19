@@ -23,7 +23,7 @@
             <h6 v-if="item.title" class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted"> <span>{{item.title}}</span> </h6>
             <ul class="nav flex-column pl-2">
               <li v-for="site in item.children" class="nav-item" @click="handleActive(site)">
-                <a href="#" :class="{'nav-link py-1':true,'active':site.url==active,'d-none':site.visible===false}" :data-src="site.url">
+                <a :href="'?url='+site.url" :class="{'nav-link py-1':true,'active':site.url==active,'d-none':site.visible===false}" :data-src="site.url">
                   <img class="nav-ico" :src="site.ico||site.url+'/favicon.ico'">
                   <span> {{site.title}} </span>
                 </a>
