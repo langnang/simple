@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap-theme.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/langnang/templates/html/bootstrap4/web-frame/style.css ">
 </head>
 
 <body>
@@ -42,55 +42,8 @@
   <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/vue@2.7.16/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/langnang/templates/html/bootstrap4/web-frame/script.js"></script>
 
-  <script src="script.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        active: "http://langnang.byethost9.com/",
-        frames: [
-          {
-            title: "",
-            type: "group",
-            children: [
-              { title: "langnang.byethost9.com", url: "http://langnang.byethost9.com/", type: "site" },
-              { title: "b9-36151388.22web.org", url: "http://b9-36151388.22web.org/", type: "site", visible: false },
-            ],
-          },
-        ],
-      },
-      computed: {
-        sidebar() {
-          let html;
-          console.log(`sidebar`, this.frames)
-          if (this.frames.length == 0) return '';
-          if (this.frames[0].type == 'site') {
-            html = '';
-          } else if (this.frames[0].type == 'group') {
-            html = '';
-          }
-          return '';
-        }
-      },
-      created() {
-        // this.fetchData();
-      },
-      methods: {
-        handleActive(site) {
-          console.log(`handleActive`, site);
-          this.active = site.url;
-        },
-        fetchData() {
-          fetch("./../config.json").then(res => res.json()).then(res => {
-            console.log(`fetchData`, res)
-            const { frames } = res;
-            this.frames = frames;
-          })
-        }
-      }
-    })
-  </script>
 </body>
 
 </html>

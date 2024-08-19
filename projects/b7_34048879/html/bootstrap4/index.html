@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap-theme.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/langnang/templates/html/bootstrap4/web-frame/style.css ">
+
 </head>
 
 <body>
@@ -43,63 +44,8 @@
   <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/vue@2.7.16/dist/vue.min.js"></script>
 
-  <script src="script.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        active: "http://langnang.byethost7.com",
-        frames: [
-          {
-            title: "",
-            type: "group",
-            children: [
-              { title: "langnang.byethost7.com", url: "http://langnang.byethost7.com", type: "site" },
-              { title: "b7-34048879.22web.org", url: "http://b7-34048879.22web.org", type: "site", visible: false },
-              { title: "skycaiji.22web.org", url: "http://skycaiji.22web.org", type: "site", },
-              { title: "webftp.22web.org", url: "http://webftp.22web.org", type: "site", },
-              { title: "soft-installer.22web.org", url: "http://soft-installer.22web.org", type: "site", },
-              { title: "onedrive-video.22web.org", url: "http://onedrive-video.22web.org", type: "site", },
-              { title: "onedrive-image.22web.org", url: "http://onedrive-image.22web.org", type: "site", },
-              { title: "onedrive-private.22web.org", url: "http://onedrive-private.22web.org", type: "site", },
-              { title: "onedrive-share.22web.org", url: "http://onedrive-share.22web.org", type: "site", },
-              { title: "typecho.22web.org", url: "http://typecho.22web.org", type: "site", },
-              { title: "typecho.10001mb.com", url: "http://typecho.10001mb.com", type: "site", },
-            ],
-          },
-        ],
-      },
-      computed: {
-        sidebar() {
-          let html;
-          console.log(`sidebar`, this.frames)
-          if (this.frames.length == 0) return '';
-          if (this.frames[0].type == 'site') {
-            html = '';
-          } else if (this.frames[0].type == 'group') {
-            html = '';
-          }
-          return '';
-        }
-      },
-      created() {
-        // this.fetchData();
-      },
-      methods: {
-        handleActive(site) {
-          console.log(`handleActive`, site);
-          this.active = site.url;
-        },
-        fetchData() {
-          fetch("./../config.json").then(res => res.json()).then(res => {
-            console.log(`fetchData`, res)
-            const { frames } = res;
-            this.frames = frames;
-          })
-        }
-      }
-    })
-  </script>
+  <script src="https://cdn.jsdelivr.net/gh/langnang/templates/html/bootstrap4/web-frame/script.js"></script>
+
 </body>
 
 </html>
