@@ -106,7 +106,7 @@ class Basic
 
     public static function view($view, $data = NULL)
     {
-        $file = __DIR__ . '/app/views/' . $view . '.php';
+        $file = __DIR__ . '/../views/' . $view . '.php';
         if (!empty($data))
             extract($data); // Convert array keys to variables
         if (file_exists($file) && is_readable($file) && pathinfo($file)['extension'] === 'php')
