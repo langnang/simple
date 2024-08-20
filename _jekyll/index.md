@@ -15,10 +15,10 @@
 - resume: 简历
 - todolist:
 - toolkit:
-- web-frame:
-- web-hunt:
-- web-page:
-- web-site:
+- webframe:
+- webhunt:
+- webpage:
+- webguide:
 - shop:
 - market:
 - recipe: 食谱、配方
