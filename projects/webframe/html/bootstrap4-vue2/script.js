@@ -29,10 +29,13 @@ const imgLoadError = (element) => {
 //   $(element.target).addClass('active')
 // })
 
-Vue.component('sidebar-menu', {
+Vue.component('container', {
   props: ['active', 'frames'],
   data: () => ({}),
   template: `
+      <div class="row" style="height: calc(100vh - 62px + 57px);">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <h3 class="text-center pt-2 pb-0 mb-0">WebFrame</h3>
         <div class="sidebar-sticky pt-3">
           <div v-for="(item,index) in frames" :key="index" :class="{'d-none':item.visible===false}">
             <h6 v-if="item.title" class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted">
@@ -49,6 +52,12 @@ Vue.component('sidebar-menu', {
 
           </div>
         </div>
+      </nav>
+      <div class="col-md-9 ml-sm-auto col-lg-10 px-0">
+        <iframe id="iframe" class="w-100 h-100" :src="active" frameborder="0" onload="iFrameOnLoad(this)"></iframe>
+      </div>
+    </div>
+        
   `,
   methods: {
     handleActive(item) {
@@ -60,7 +69,7 @@ Vue.component('sidebar-menu', {
 const app = new Vue({
   el: "#app",
   data: {
-    active: "https://langnang.github.io/sites",
+    active: "",
     frames: [],
   },
   computed: {
@@ -86,9 +95,9 @@ const app = new Vue({
       this.active = site.url;
     },
     fetchData() {
-      fetch("./data.json").then(res => res.json()).then(res => {
-        console.log(`fetchData`, res)
-        const { active, frames } = res;
+      fetch("https://cdn.jsdelivr.net/gh/langnang/storage/data/webframe.json").then(res => res.json()).then(res => {
+        console.log(`fetchData`, location, res)
+        const { active, frames } = res[location.hostname];
         this.active = active;
         this.frames = frames;
       })
