@@ -70,17 +70,17 @@ class Basic
             $pattern = str_ireplace('(:any)', '[^\/]+', $pattern);
 
             // var_dump($_SERVER);
-            $_SERVER['SCRIPT_NAME'] = substr($_SERVER['SCRIPT_FILENAME'], strlen(dirname($_SERVER['PATH_TRANSLATED'] . $_SERVER['PHP_SELF'])));
-            $_REQUEST_URI = substr(dirname($_SERVER['SCRIPT_FILENAME']) . "/", strlen($_SERVER['PATH_TRANSLATED'] . $_SERVER['REQUEST_URI']) - 1);
+            // $_SERVER['SCRIPT_NAME'] = substr($_SERVER['SCRIPT_FILENAME'], strlen(dirname($_SERVER['PATH_TRANSLATED'] . $_SERVER['PHP_SELF'])));
+            // $_REQUEST_URI = substr(dirname($_SERVER['SCRIPT_FILENAME']) . "/", strlen($_SERVER['PATH_TRANSLATED'] . $_SERVER['REQUEST_URI']) - 1);
             // $_SERVER['REQUEST_URI'] = substr($_SERVER['SCRIPT_FILENAME'], strlen($_SERVER['PATH_TRANSLATED'] . $_SERVER['REQUEST_URI']));
             // Check for subfolders from DocumentRoot and include in endpoint
             $sub = explode('/', dirname($_SERVER['SCRIPT_NAME']));
             $subfolder = (!empty($sub[1])) ? implode('\/', $sub) : '';
 
-            $uri = parse_url($_REQUEST_URI, PHP_URL_PATH);
+            $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             // $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             if (preg_match('/^' . $subfolder . $pattern . '+$/i', $uri)) {
-                var_dump($uri);
+                // var_dump($uri);
                 if (is_string($class_method)) {
                     if (strstr($class_method, '@')) {
                         list($class, $method) = explode('@', $class_method);
