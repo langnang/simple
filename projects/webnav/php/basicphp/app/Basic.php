@@ -196,7 +196,7 @@ class Basic
         $http_protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https://' : 'http://';
         $subfolder = (!empty(dirname($_SERVER['SCRIPT_NAME']))) ? dirname($_SERVER['SCRIPT_NAME']) : '';
 
-        return $http_protocol . $_SERVER['HTTP_HOST'] . $subfolder . '/';
+        return $http_protocol . $_SERVER['HTTP_HOST'] . $subfolder . (substr($subfolder, strlen($subfolder) - 1) == '/' ? '' : '/');
     }
 
     /**

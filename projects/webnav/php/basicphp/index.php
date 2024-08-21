@@ -38,6 +38,9 @@ Basic::setFirewall(); // Enable firewall
 Basic::setAutoloadClass(['classes', 'models', 'views', 'controllers']); // Autoload folders
 Basic::setAutoRoute(); // Automatic '/class/method' routing
 
+// var_dump($_SERVER);
+// echo "<script>console.log(" . json_encode($_SERVER, true) . ")</script>";
+// echo "<script>console.log(123)</script>";
 /*
 |--------------------------------------------------------------------------
 | Endpoint Routes
@@ -46,6 +49,9 @@ Basic::setAutoRoute(); // Automatic '/class/method' routing
 require_once __DIR__ . '/routes/api.php';
 require_once __DIR__ . '/routes/web.php';
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Handle Error 404 - Page Not Found - Invalid URI
@@ -53,3 +59,4 @@ require_once __DIR__ . '/routes/web.php';
 */
 
 Basic::apiResponse(404); // Not Found
+

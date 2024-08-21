@@ -1,7 +1,5 @@
 <?php
 
-var_dump(Basic::class);
-
 Basic::route('GET', '/', function () { // Set homepage
     $page_title = 'Starter Application';
     Basic::view('home', compact('page_title'));
