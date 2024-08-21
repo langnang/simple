@@ -43,9 +43,6 @@ Basic::setAutoRoute(); // Automatic '/class/method' routing
 | Endpoint Routes
 |--------------------------------------------------------------------------
 */
-// $prefix = dirname($_SERVER['PHP_SELF']);
-
-// var_dump($prefix);
 require_once __DIR__ . '/routes/api.php';
 require_once __DIR__ . '/routes/web.php';
 
