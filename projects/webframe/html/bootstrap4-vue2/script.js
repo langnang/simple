@@ -37,7 +37,7 @@ Vue.component('container', {
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <h3 class="text-center pt-2 pb-0 mb-0">WebFrame</h3>
         <div class="sidebar-sticky pt-3">
-          <div v-for="(item,index) in frames" :key="index" :class="{'d-none':item.visible===false}">
+          <div v-for="(item,index) in frames.filter(v=>v.visible!==false)" :key="index" :class="{'d-none':item.visible===false}">
             <h6 v-if="item.title" class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted">
               <span>{{item.title}}</span>
             </h6>
