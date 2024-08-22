@@ -97,7 +97,7 @@ const app = new Vue({
     fetchData() {
       fetch("https://cdn.jsdelivr.net/gh/langnang/storage/data/webframe.json").then(res => res.json()).then(res => {
         console.log(`fetchData`, location, res)
-        const { active, frames } = res[location.hostname];
+        const { active, frames } = res[location.origin];
         this.active = active;
         this.frames = frames;
       })
