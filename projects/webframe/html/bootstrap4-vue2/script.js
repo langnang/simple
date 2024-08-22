@@ -95,7 +95,9 @@ const app = new Vue({
       this.active = site.url;
     },
     fetchData() {
-      fetch("https://cdn.jsdelivr.net/gh/langnang/storage/data/webframe.json").then(res => res.json()).then(res => {
+      // const url = "https://cdn.jsdelivr.net/gh/langnang/storage/data/webframe.json";
+      const url = "https://raw.gitmirror.com/langnang/storage/master/data/webframe.json";
+      fetch(url).then(res => res.json()).then(res => {
         console.log(`fetchData`, location, res)
         const { active, frames } = res[location.origin];
         this.active = active;
