@@ -2,52 +2,46 @@
 
 (function () {
   'use strict'
-
   feather.replace()
+})();
+function imgLoadError(element) {
+  // console.log(`imgLoadError`, element)
+  $(element).addClass('d-none');
+  $(element).next().removeClass('d-none');
+}
+(function () {
 
-  // Graphs
-  var ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
-    }
+  let url = "https://raw.gitmirror.com/langnang/storage/master/data/webnav.json";
+  if (['localhost', '127.0.0.1'].includes(location.host)) { url = '/storage/data/webnav.json'; }
+  fetch(url).then(res => res.json()).then(res => {
+    console.log(`fetch`, res);
+    const { contents } = res;
+
+    const html = Object.values(contents).reduce((t, v) => {
+      if (!v.title) return t;
+      if (typeof v.icon !== 'string') v.icon = v.icon[0];
+      if (v.icon.substr(0, 4) !== 'http') v.icon = v.slug + v.icon;
+      return t +
+        `<div class="col-md-4 px-2">
+            <div class="card my-2 shadow" data-toggle="tooltip" data-placement="bottom" title="${v.slug}" onclick="window.open('${v.slug}', '_blank')">
+              <div class="card-body p-3">
+                <div class="media">
+                  <img src="${v.icon}" class="rounded mr-2" width="48" height="48" alt="..." onerror="imgLoadError(this)">
+                  <svg class="rounded mr-2 d-none" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <rect width="100%" height="100%" fill="#55595c" />
+                  </svg>
+                  <div class="media-body overflow-hidden">
+                    <h6 class="mt-0 text-nowrap text-truncate">${v.title}</h6>
+                    <p class="small mb-0 overflow-hidden" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;  height: 2.5rem;  text-overflow: ellipsis;  ">${v.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          `;
+    }, '<div class="row">') + '</div>';
+    $('[role=main]').html(html);
+    $('[data-toggle="tooltip"]').tooltip()
+
   })
-})()
+})();

@@ -115,3 +115,16 @@ body {
 .nav-ico {
   width: 17px;
 }
+
+[role='main'] .card * {
+  cursor: pointer;
+}
+
+[role='main'] .col-md-4:hover .card {
+  margin-top: -2px !important;
+  transition: margin-top 0.3s;
+}
+
+.tooltip-inner {
+  max-width: unset;
+}
