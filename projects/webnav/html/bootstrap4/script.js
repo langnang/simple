@@ -26,7 +26,7 @@ function imgLoadError(element) {
             <div class="card my-2 shadow" data-toggle="tooltip" data-placement="bottom" title="${v.slug}" onclick="window.open('${v.slug}', '_blank')">
               <div class="card-body p-3">
                 <div class="media">
-                  <img src="${v.icon}" class="rounded mr-2" width="48" height="48" alt="..." onerror="imgLoadError(this)">
+                  <img data-src="${v.icon}" class="lozad rounded mr-2" width="48" height="48" alt="..." onerror="imgLoadError(this)">
                   <svg class="rounded mr-2 d-none" width="48" height="48" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
                     <rect width="100%" height="100%" fill="#55595c" />
                   </svg>
@@ -42,6 +42,8 @@ function imgLoadError(element) {
     }, '<div class="row">') + '</div>';
     $('[role=main]').html(html);
     $('[data-toggle="tooltip"]').tooltip()
-
+    //img lazy loaded
+    const observer = lozad();
+    observer.observe();
   })
 })();
