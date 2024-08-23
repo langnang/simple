@@ -10,18 +10,21 @@ function imgLoadError(element) {
   $(element).next().removeClass('d-none');
 }
 (function () {
-
   let url = "https://raw.gitmirror.com/langnang/storage/master/data/webnav.json";
   if (['localhost', '127.0.0.1'].includes(location.host)) { url = '/storage/data/webnav.json'; }
   fetch(url).then(res => res.json()).then(res => {
     console.log(`fetch`, res);
     const { contents } = res;
 
-    const html = Object.values(contents).reduce((t, v) => {
-      if (!v.title) return t;
+    let html = `<div class="row">`, warning_contents = [];
+    Object.values(contents).forEach(v => {
+      if (!v.title || v.status === 'private' || v.visible == false) {
+        warning_contents.push(v);
+        return;
+      };
       if (typeof v.icon !== 'string') v.icon = v.icon[0];
       if (v.icon.substr(0, 4) !== 'http') v.icon = v.slug + v.icon;
-      return t +
+      html +=
         `<div class="col-md-4 px-2">
             <div class="card my-2 shadow" data-toggle="tooltip" data-placement="bottom" title="${v.slug}" onclick="window.open('${v.slug}', '_blank')">
               <div class="card-body p-3">
@@ -38,8 +41,10 @@ function imgLoadError(element) {
               </div>
             </div>
           </div>
-          `;
-    }, '<div class="row">') + '</div>';
+          `
+    })
+    html += '</div>';
+    console.log(warning_contents);
     $('[role=main]').html(html);
     $('[data-toggle="tooltip"]').tooltip()
     //img lazy loaded
