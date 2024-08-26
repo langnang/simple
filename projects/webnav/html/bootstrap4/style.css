@@ -47,10 +47,17 @@ body {
   }
 }
 
+.sidebar .nav-item {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
 .sidebar .nav-link {
   font-weight: 600;
   color: #333;
   cursor: pointer;
+
 }
 
 .sidebar .nav-link .feather {

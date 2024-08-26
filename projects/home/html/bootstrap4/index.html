@@ -21,6 +21,15 @@
     [data-toggle="collapse"]:not(.collapsed) .bi {
       transform: rotate(90deg);
     }
+
+    .dot {
+      height: .5rem;
+      width: .5rem;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: currentcolor;
+      line-height: 1;
+    }
   </style>
 </head>
 
@@ -30,26 +39,15 @@
     <div class="row">
       <div class="col col-md-auto bg-light sticky-top px-0" style="margin-top: -200px; width: 280px; height: 100vh;">
         <div class="accordion" id="accordionExample" style="margin-top: 4rem;">
-          <div class="card bg-transparent">
-            <div class="card-header p-0" id="headingOne">
-              <a class="btn btn-link btn-block text-left text-decoration-none" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <div class="row">
-                  <div class="col text-truncate">
-                    Collapsible Group Item #1
-                  </div>
-                  <div class="col-auto">
-                    <i class="bi bi-caret-right-fill float-right"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="list-group list-group-flush text-light">
-                <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">An item</a>
-                <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A second item</a>
-                <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A third item</a>
-              </div>
+          <div class="d-flex position-relative flex-column">
+            <h6 class="px-3 stretched-link" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Collapsible Group Item #1
+              <i class="bi bi-caret-right-fill float-right"></i>
+            </h6>
+            <div class="list-group text-light collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">An item</a>
+              <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A second item</a>
+              <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A third item</a>
             </div>
           </div>
           <div class="card bg-transparent">
@@ -571,7 +569,7 @@
         .then(res => res.json())
         .then(res => {
           const html = Object.values(res.contents).reduce((t, v) => {
-            return t + (v.title && v.status !== 'private' ? `<a class="btn btn-sm btn-secondary my-1 pl-0 ${v._url && v._url[location.origin] ? '' : 'disabled'}" href="${v._url && v._url[location.origin] ? v._url[location.origin] : '#'}" role="button" aria-pressed="true"><span class="bi bi-dot"></span>${v.title + (v.titleCn ? ' - ' + v.titleCn : '')}</a>\t` : '');
+            return t + (v.title && v.status !== 'private' ? `<a class="btn btn-sm btn-secondary my-1 pl-1 ${v._url && v._url[location.origin] ? '' : 'disabled'}" href="${v._url && v._url[location.origin] ? v._url[location.origin] : '#'}" role="button" aria-pressed="true"><span class="dot mr-1"></span>${v.title + (v.titleCn ? ' - ' + v.titleCn : '')}</a>\t` : '');
           }, ``)
           $("[role='main-site-group']").html(html);
         })
