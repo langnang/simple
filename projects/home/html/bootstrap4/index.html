@@ -13,50 +13,120 @@
   <link crossorigin="anonymous" rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <link crossorigin="anonymous" rel="stylesheet" href="style.css">
+  <style>
+    [data-toggle="collapse"] .bi {
+      transition: transform .35s ease;
+    }
+
+    [data-toggle="collapse"]:not(.collapsed) .bi {
+      transform: rotate(90deg);
+    }
+  </style>
 </head>
 
 <body>
   <div id="app" class="container-fluid">
     <h1 class="text-center">Localhost</h1>
     <div class="row">
-      <div class="col col-md-auto bg-secondary sticky-top" style="margin-top: -200px; width: 240px; height: 100vh;">
-        <div class="card"></div>
+      <div class="col col-md-auto bg-light sticky-top px-0" style="margin-top: -200px; width: 280px; height: 100vh;">
+        <div class="accordion" id="accordionExample" style="margin-top: 4rem;">
+          <div class="card bg-transparent">
+            <div class="card-header p-0" id="headingOne">
+              <a class="btn btn-link btn-block text-left text-decoration-none" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="row">
+                  <div class="col text-truncate">
+                    Collapsible Group Item #1
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-caret-right-fill float-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="list-group list-group-flush text-light">
+                <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">An item</a>
+                <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A second item</a>
+                <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A third item</a>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent">
+            <div class="card-header p-0" id="headingTwo">
+              <a class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div class="row">
+                  <div class="col text-truncate">
+                    Collapsible Group Item #2
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-caret-right-fill float-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                Some placeholder content for the second accordion panel. This panel is hidden by default.
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent">
+            <div class="card-header p-0" id="headingThree">
+              <a class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="row">
+                  <div class="col text-truncate">
+                    Collapsible Group Item #3
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-caret-right-fill float-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col">
         <section>
 
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Album <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Api <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Audio <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Blog <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Brand <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Charts <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Comic <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Commodity <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Game <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">GUI <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Langnang <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Market <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Noun <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Price <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Question <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1 disabled" role="button" aria-pressed="true">Quote <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Resume <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">School <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Shop <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">SoftInstaller <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Storage <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">ToDoList <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Toolkit <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Video <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">WebNav <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">WebFrame <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">WebHunt <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">WebPage <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">WebFtp <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">WebTerminal <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">WebShell <span class="badge badge-light">0</span></a>
-          <a href="#" class="btn btn-sm btn-secondary my-1" role="button" aria-pressed="true">Wiki <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/album/html/bootstrap4/" role="button" aria-pressed="true">Album <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Api <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Audio <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/blog/html/bootstrap4/" role="button" aria-pressed="true">Blog <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Brand <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Charts <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/comic/html/bootstrap4/" role="button" aria-pressed="true">Comic <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="#" role="button" aria-pressed="true">Commodity <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Game <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">GUI <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="#" role="button" aria-pressed="true">Langnang <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Market <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Noun <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Price <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Question <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" role="button" aria-pressed="true">Quote <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Resume <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">School <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Shop <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="/43000.projects/306.soft-installer/" role="button" aria-pressed="true">SoftInstaller <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Storage <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">ToDoList <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Toolkit <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Video <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/webnav/html/bootstrap4/" role="button" aria-pressed="true">WebNav <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/webframe/html/bootstrap4-vue2/" role="button" aria-pressed="true">WebFrame <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebHunt <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebPage <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebFtp <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebTerminal <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebShell <span class="badge badge-light">0</span></a>
+          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Wiki <span class="badge badge-light">0</span></a>
 
         </section>
         <section>
@@ -465,55 +535,58 @@
         </section>
 
       </div>
-      <div class="col col-md-auto bg-secondary sticky-top px-2" style="margin-top: -200px; width: 80px; height:100vh;">
-        <div class="card my-1 border-0">
-          <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#55595c"></rect>
-          </svg>
-          <span class="badge badge-pill badge-primary" style="position:absolute;right:0;">1</span>
-        </div>
-        <div class="card my-1 border-0 text-center text-light" style="background-color: #55595c;line-height: 4rem;font-size: 2.5rem;">
-          <i class="bi bi-alexa bd-placeholder-img rounded"></i>
-        </div>
-        <div class="card my-1 py-2 border-0 text-center text-light" style="background-color: #55595c;">
-          Web Frame
-        </div>
-        <div class="card my-1 py-2 border-0 text-center text-light" style="background-color: #55595c;">
-          Web Terminal
-        </div>
-        <div class="card my-1 py-2 border-0 text-center text-light" style="background-color: #55595c;">
-          Soft Installer
-        </div>
-        <div class="card my-1 border-0">
-          <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#55595c" />
-          </svg>
-        </div>
-        <div class="card my-1 border-0">
-          <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#55595c" />
-          </svg>
-        </div>
-        <div class="card my-1 border-0">
-          <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#55595c" />
-          </svg>
-        </div>
-        <div class="card my-1 border-0">
-          <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#55595c" />
-          </svg>
-        </div>
-        <div class="card my-1 border-0">
-          <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#55595c" />
-          </svg>
-        </div>
-        <div class="card my-1 border-0">
-          <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="#55595c" />
-          </svg>
-        </div>
+      <div class="col col-md-auto bg-light sticky-top px-2" style="margin-top: -200px; width: 80px; height:100vh;">
+        <section style="margin-top: 4rem;">
+          <div class="card my-1 border-0">
+            <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+            </svg>
+            <span class="badge badge-pill badge-primary" style="position:absolute;right:0;">1</span>
+          </div>
+          <div class="card my-1 border-0 text-center text-light" style="background-color: #55595c;line-height: 4rem;font-size: 2.5rem;">
+            <i class="bi bi-alexa bd-placeholder-img rounded"></i>
+          </div>
+          <div class="card my-1 py-2 border-0 text-center text-light" style="background-color: #55595c;">
+            Web Frame
+          </div>
+          <div class="card my-1 py-2 border-0 text-center text-light" style="background-color: #55595c;">
+            Web Terminal
+          </div>
+          <div class="card my-1 py-2 border-0 text-center text-light" style="background-color: #55595c;">
+            Soft Installer
+          </div>
+          <div class="card my-1 border-0">
+            <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" />
+            </svg>
+          </div>
+          <div class="card my-1 border-0">
+            <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" />
+            </svg>
+          </div>
+          <div class="card my-1 border-0">
+            <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" />
+            </svg>
+          </div>
+          <div class="card my-1 border-0">
+            <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" />
+            </svg>
+          </div>
+          <div class="card my-1 border-0">
+            <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" />
+            </svg>
+          </div>
+          <div class="card my-1 border-0">
+            <svg class="bd-placeholder-img rounded" width="64" height="64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c" />
+            </svg>
+          </div>
+        </section>
+
       </div>
     </div>
   </div>
@@ -522,6 +595,7 @@
   <script crossorigin="anonymous" src="https://unpkg.com/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script crossorigin="anonymous" src="https://unpkg.com/mockjs@1.1.0/dist/mock-min.js"></script>
   <script crossorigin="anonymous" src="https://unpkg.com/holderjs@2.9.9/holder.min.js"></script>
+  <script crossorigin="anonymous" src="https://unpkg.com/requirejs@2.3.7/require.js" data-main="/storage/js/requirejs.config.js"></script>
 
   <script crossorigin="anonymous" src="script.js"></script>
 </body>
