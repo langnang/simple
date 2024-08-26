@@ -93,41 +93,7 @@
         </div>
       </div>
       <div class="col">
-        <section>
-
-          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/album/html/bootstrap4/" role="button" aria-pressed="true">Album <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Api <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Audio <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/blog/html/bootstrap4/" role="button" aria-pressed="true">Blog <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Brand <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Charts <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/comic/html/bootstrap4/" role="button" aria-pressed="true">Comic <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1" href="#" role="button" aria-pressed="true">Commodity <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Game <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">GUI <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1" href="#" role="button" aria-pressed="true">Langnang <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Market <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Noun <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Price <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Question <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" role="button" aria-pressed="true">Quote <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Resume <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">School <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Shop <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1" href="/43000.projects/306.soft-installer/" role="button" aria-pressed="true">SoftInstaller <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Storage <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">ToDoList <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Toolkit <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Video <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/webnav/html/bootstrap4/" role="button" aria-pressed="true">WebNav <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1" href="/41000.simple/projects/webframe/html/bootstrap4-vue2/" role="button" aria-pressed="true">WebFrame <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebHunt <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebPage <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebFtp <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebTerminal <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">WebShell <span class="badge badge-light">0</span></a>
-          <a class="btn btn-sm btn-secondary my-1 disabled" href="#" role="button" aria-pressed="true">Wiki <span class="badge badge-light">0</span></a>
-
+        <section role="main-site-group">
         </section>
         <section>
           <div class="card-group">
@@ -533,7 +499,6 @@
             </div>
           </div>
         </section>
-
       </div>
       <div class="col col-md-auto bg-light sticky-top px-2" style="margin-top: -200px; width: 80px; height:100vh;">
         <section style="margin-top: 4rem;">
@@ -598,6 +563,20 @@
   <script crossorigin="anonymous" src="https://unpkg.com/requirejs@2.3.7/require.js" data-main="/storage/js/requirejs.config.js"></script>
 
   <script crossorigin="anonymous" src="script.js"></script>
+
+  <script>
+    (function () {
+      "use strict";
+      fetch("/storage/data/main.json")
+        .then(res => res.json())
+        .then(res => {
+          const html = Object.values(res.contents).reduce((t, v) => {
+            return t + (v.title && v.status !== 'private' ? `<a class="btn btn-sm btn-secondary my-1 pl-0 ${v._url && v._url[location.origin] ? '' : 'disabled'}" href="${v._url && v._url[location.origin] ? v._url[location.origin] : '#'}" role="button" aria-pressed="true"><i class="bi bi-dot"></i>${v.title + (v.titleCn ? ' - ' + v.titleCn : '')}</a>\t` : '');
+          }, ``)
+          $("[role='main-site-group']").html(html);
+        })
+    })();
+  </script>
 </body>
 
 </html>
