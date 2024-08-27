@@ -6,31 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bootstrap v4</title>
-
-  <link crossorigin="anonymous" rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
-  <link crossorigin="anonymous" rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.min.css">
-  <link crossorigin="anonymous" rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link crossorigin="anonymous" rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-  <link crossorigin="anonymous" rel="stylesheet" href="style.css">
-  <style>
-    [data-toggle="collapse"] .bi {
-      transition: transform .35s ease;
-    }
-
-    [data-toggle="collapse"]:not(.collapsed) .bi {
-      transform: rotate(90deg);
-    }
-
-    .dot {
-      height: .5rem;
-      width: .5rem;
-      display: inline-block;
-      border-radius: 50%;
-      background-color: currentcolor;
-      line-height: 1;
-    }
-  </style>
 </head>
 
 <body>
@@ -39,53 +14,61 @@
     <div class="row">
       <div class="col col-md-auto bg-light sticky-top px-0" style="margin-top: -200px; width: 280px; height: 100vh;">
         <div class="accordion" id="accordionExample" style="margin-top: 4rem;">
-          <div class="d-flex position-relative flex-column">
-            <h6 class="px-3 stretched-link" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              Collapsible Group Item #1
-              <i class="bi bi-caret-right-fill float-right"></i>
-            </h6>
-            <div class="list-group text-light collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">An item</a>
-              <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A second item</a>
-              <a class="list-group-item py-2 text-decoration-none bg-transparent stretched-link">A third item</a>
+          <div class="card bg-transparent">
+            <div class="card-header position-relative py-2 collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <div class="stretched-link row">
+                <div class="col px-2 text-truncate">
+                  Collapsible Group Item #1
+                </div>
+                <div class="col-auto px-2">
+                  <i class="bi bi-caret-right-fill float-right"></i>
+                </div>
+              </div>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item stretched-link py-2">An item</li>
+                <li class="list-group-item stretched-link py-2">A second item</li>
+                <li class="list-group-item stretched-link py-2">A third item</li>
+              </ul>
             </div>
           </div>
           <div class="card bg-transparent">
-            <div class="card-header p-0" id="headingTwo">
-              <a class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <div class="row">
-                  <div class="col text-truncate">
-                    Collapsible Group Item #2
-                  </div>
-                  <div class="col-auto">
-                    <i class="bi bi-caret-right-fill float-right"></i>
-                  </div>
+            <div class="card-header position-relative py-2 collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <div class="row">
+                <div class="col px-2 text-truncate">
+                  Collapsible Group Item #2
                 </div>
-              </a>
+                <div class="col-auto px-2">
+                  <i class="bi bi-caret-right-fill float-right"></i>
+                </div>
+              </div>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body">
-                Some placeholder content for the second accordion panel. This panel is hidden by default.
-              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item stretched-link py-2">An item</li>
+                <li class="list-group-item stretched-link py-2">A second item</li>
+                <li class="list-group-item stretched-link py-2">A third item</li>
+              </ul>
             </div>
           </div>
-          <div class="card bg-transparent">
-            <div class="card-header p-0" id="headingThree">
-              <a class="btn btn-link btn-block text-left text-decoration-none collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <div class="row">
-                  <div class="col text-truncate">
-                    Collapsible Group Item #3
-                  </div>
-                  <div class="col-auto">
-                    <i class="bi bi-caret-right-fill float-right"></i>
-                  </div>
+          <div class="card flex-column bg-transparent">
+            <div class="card-header position-relative py-2 collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <div class="stretched-link row">
+                <div class="col px-2 text-truncate">
+                  Collapsible Group Item #3
                 </div>
-              </a>
+                <div class="col-auto px-2">
+                  <i class="bi bi-caret-right-fill float-right"></i>
+                </div>
+              </div>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <div class="card-body">
-                And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
-              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item stretched-link py-2">An item</li>
+                <li class="list-group-item stretched-link py-2">A second item</li>
+                <li class="list-group-item stretched-link py-2">A third item</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -98,7 +81,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -110,7 +93,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -122,7 +105,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -136,7 +119,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -150,7 +133,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -164,7 +147,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -180,7 +163,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -192,7 +175,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -204,7 +187,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -218,7 +201,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -232,7 +215,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -246,7 +229,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -263,7 +246,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -276,7 +259,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -289,7 +272,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -302,7 +285,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -317,7 +300,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -330,7 +313,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -343,7 +326,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -356,7 +339,7 @@
               <div class="card">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -371,7 +354,7 @@
               <div class="card h-100">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -384,7 +367,7 @@
               <div class="card h-100">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -397,7 +380,7 @@
               <div class="card h-100">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -410,7 +393,7 @@
               <div class="card h-100">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                   <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                  <rect width="100%" height="100%" fill="#6c757d"></rect>
                 </svg>
 
                 <div class="card-body">
@@ -424,7 +407,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -445,7 +428,7 @@
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#6c757d"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+                <rect width="100%" height="100%" fill="#6c757d"></rect>
               </svg>
 
               <div class="card-body">
@@ -554,27 +537,8 @@
     </div>
   </div>
 
-  <script crossorigin="anonymous" src="https://unpkg.com/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script crossorigin="anonymous" src="https://unpkg.com/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script crossorigin="anonymous" src="https://unpkg.com/mockjs@1.1.0/dist/mock-min.js"></script>
-  <script crossorigin="anonymous" src="https://unpkg.com/holderjs@2.9.9/holder.min.js"></script>
-  <script crossorigin="anonymous" src="https://unpkg.com/requirejs@2.3.7/require.js" data-main="/storage/js/requirejs.config.js"></script>
+  <script crossorigin="anonymous" src="https://unpkg.com/requirejs@2.3.7/require.js" data-main="/storage/js/requirejs.config.js?module=bootstrap4"></script>
 
-  <script crossorigin="anonymous" src="script.js"></script>
-
-  <script>
-    (function () {
-      "use strict";
-      fetch("/storage/data/main.json")
-        .then(res => res.json())
-        .then(res => {
-          const html = Object.values(res.contents).reduce((t, v) => {
-            return t + (v.title && v.status !== 'private' ? `<a class="btn btn-sm btn-secondary my-1 pl-1 ${v._url && v._url[location.origin] ? '' : 'disabled'}" href="${v._url && v._url[location.origin] ? v._url[location.origin] : '#'}" role="button" aria-pressed="true"><span class="dot mr-1"></span>${v.title + (v.titleCn ? ' - ' + v.titleCn : '')}</a>\t` : '');
-          }, ``)
-          $("[role='main-site-group']").html(html);
-        })
-    })();
-  </script>
 </body>
 
 </html>

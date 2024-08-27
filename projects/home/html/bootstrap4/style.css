@@ -1,0 +1,16 @@
+[data-toggle="collapse"] .bi {
+  transition: transform .35s ease;
+}
+
+[data-toggle="collapse"]:not(.collapsed) .bi {
+  transform: rotate(90deg);
+}
+
+.dot {
+  height: .5rem;
+  width: .5rem;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: currentcolor;
+  line-height: 1;
+}

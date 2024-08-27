@@ -8,3 +8,4 @@ package.lock
 pnpm-lock.yaml
 
 *.url
+.env
