@@ -766,7 +766,7 @@ class phpspider
 
         // 根据命令做相应处理
         switch ($command) {
-            // 启动 phpspider
+                // 启动 phpspider
             case 'start':
                 if ($command2 === '-d') {
                     self::$daemonize = true;
@@ -786,10 +786,10 @@ class phpspider
             case 'kill':
                 exec("ps aux | grep $start_file | grep -v grep | awk '{print $2}' |xargs kill -SIGKILL");
                 break;
-            // 显示 phpspider 运行状态
+                // 显示 phpspider 运行状态
             case 'status':
                 exit(0);
-            // 未知命令
+                // 未知命令
             default:
                 exit("Usage: php yourfile.php {start|stop|status|kill}\n");
         }
@@ -803,12 +803,12 @@ class phpspider
     public function signal_handler($signal)
     {
         switch ($signal) {
-            // Stop.
+                // Stop.
             case SIGINT:
                 // log::warn('Program stopping...');
                 self::$terminate = true;
                 break;
-            // Show status.
+                // Show status.
             case SIGUSR2:
                 echo "show status\n";
                 break;
@@ -1958,7 +1958,7 @@ class phpspider
                 return $item['name'] == 'spider_original_title';
             })) == 0
         ) {
-            array_push($confs, ['name' => 'spider_original_title', 'selector' => "//head//title"]);
+            // array_push($confs, ['name' => 'spider_original_title', 'selector' => "//head//title"]);
         }
 
         foreach ($confs as $conf) {
@@ -2072,8 +2072,8 @@ class phpspider
         if (!empty($fields)) {
             foreach ($fields as $fieldname => $data) {
                 $pattern = "/<img\s+.*?src=[\"']{0,1}(.*)[\"']{0,1}[> \r\n\t]{1,}/isu";
-                /*$pattern = "/<img.*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.jpeg|\.png]))[\'|\"].*?[\/]?>/i"; */
-                // 在抽取到field内容之后调用, 对其中包含的img标签进行回调处理
+                /* $pattern = "/<img.*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.jpeg|\.png]))[\'|\"].*?[\/]?>/i"; */
+                /* 在抽取到field内容之后调用, 对其中包含的img标签进行回调处理 */
                 if ($this->on_handle_img && preg_match($pattern, $data)) {
                     $return = call_user_func($this->on_handle_img, $fieldname, $data);
                     if (!isset($return)) {
@@ -2109,7 +2109,8 @@ class phpspider
     function isValid($expstr)
     {
         $temp = array();
-        for ($i = 0; $i < strlen($expstr); $i++) {
+        for ($i = 0; $i
+            < strlen($expstr); $i++) {
             $ch = $expstr[$i];
             switch ($ch) {
                 case '(':
@@ -2123,31 +2124,17 @@ class phpspider
         }
         return empty($temp);
     }
-    /**
-     * 根据配置过滤处理字段数据
-     *
-     * @param mixed $values
-     * @param mixed $filter
-     * @return void
-     */
-    public function filter_field($values, $filters)
+    /** * 根据配置过滤处理字段数据 * * @param mixed $values * @param mixed $filter * @return void */ public function filter_field($values, $filters)
     {
         $filters = explode('|', $filters);
-        foreach ($filters as $filter) {
-            // 开始标签
-            $startTag = strpos($filter, "(");
-            // 结束标签
+        foreach ($filters as $filter) { /* 开始标签 */
+            $startTag = strpos($filter, "("); /* 结束标签 */
             $endTag = strripos($filter, ")");
-
-            $latestStr = substr($filter, $endTag + 1);
-            // 函数
-            $func = $startTag == false ? $filter : substr($filter, 0, $startTag);
-            // 参数
+            $latestStr = substr($filter, $endTag + 1);/* 函数 */
+            $func = $startTag == false ? $filter : substr($filter, 0, $startTag); /* 参数*/
             $argStr = substr($filter, $startTag + 1, $endTag - $startTag - 1);
             $args = preg_split('/,/', $argStr);
-
-            $isValid = true;
-            // 参数数组长度大于0
+            $isValid = true; /* 参数数组长度大于0 */
             if (count($args) > 0) {
                 foreach ($args as $arg) {
                     if (!$this->isValid($arg)) {

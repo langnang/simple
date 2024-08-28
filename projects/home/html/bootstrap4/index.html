@@ -14,6 +14,10 @@
     <div class="row">
       <div class="col col-md-auto bg-light sticky-top px-0" style="margin-top: -200px; width: 280px; height: 100vh;">
         <div class="accordion" id="accordionExample" style="margin-top: 4rem;">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action py-2"> The current link item </a>
+            <a href="#" class="list-group-item list-group-item-action py-2">A second link item</a>
+          </div>
           <div class="card border-0">
             <div class="card-header position-relative py-2 collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
               <div class="stretched-link row">
@@ -26,12 +30,18 @@
               </div>
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item stretched-link py-2">An item</li>
-                <li class="list-group-item stretched-link py-2">A second item</li>
-                <li class="list-group-item stretched-link py-2">A third item</li>
-              </ul>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action py-2"> The current link item </a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A fourth link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A disabled link item</a>
+              </div>
             </div>
+          </div>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action py-2"> The current link item </a>
+            <a href="#" class="list-group-item list-group-item-action py-2">A second link item</a>
           </div>
           <div class="card border-0">
             <div class="card-header position-relative py-2 collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -48,12 +58,18 @@
               </div>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item stretched-link py-2">An item</li>
-                <li class="list-group-item stretched-link py-2">A second item</li>
-                <li class="list-group-item stretched-link py-2">A third item</li>
-              </ul>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action py-2"> The current link item </a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A fourth link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A disabled link item</a>
+              </div>
             </div>
+          </div>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action py-2"> The current link item </a>
+            <a href="#" class="list-group-item list-group-item-action py-2">A second link item</a>
           </div>
           <div class="card border-0">
             <div class="card-header position-relative py-2 collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -67,12 +83,23 @@
               </div>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <ul class="list-group list-group-flush">
+              <!-- <ul class="list-group list-group-flush">
                 <li class="list-group-item stretched-link py-2">An item</li>
                 <li class="list-group-item stretched-link py-2">A second item</li>
                 <li class="list-group-item stretched-link py-2">A third item</li>
-              </ul>
+              </ul> -->
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action py-2"> The current link item </a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A fourth link item</a>
+                <a href="#" class="list-group-item list-group-item-action py-2">A disabled link item</a>
+              </div>
             </div>
+          </div>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action border-left-0 border-right-0 py-2 px-2"> The current link item </a>
+            <a href="#" class="list-group-item list-group-item-action border-left-0 border-right-0 py-2 px-2">A second link item</a>
           </div>
         </div>
       </div>
@@ -80,6 +107,20 @@
         <section role="main-site-group">
         </section>
         <section>
+          <nav class="bg-secondary">
+            <div class="nav nav-pills position-relative" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+              <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+              <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+              <span class="glider"></span>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+          </div>
+
           <div class="card-group">
             <div class="card">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -540,7 +581,7 @@
     </div>
   </div>
 
-  <script crossorigin="anonymous" src="https://unpkg.com/requirejs@2.3.7/require.js" data-main="/storage/js/requirejs.config.js?module=bootstrap4"></script>
+  <script crossorigin="anonymous" src="https://unpkg.com/requirejs@2.3.7/require.js" data-main="/storage/js/requirejs.config.js?title=Home"></script>
 
 </body>
 
