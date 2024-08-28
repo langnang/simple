@@ -1239,13 +1239,13 @@ class phpspider
         }
         //顺序提取任务，先进先出(当配置 queue_order = rand ，先进先出无效，都为随机提取任务)
         $link = $this->queue_rpop();
-        // var_dump($link);
+        var_dump(__FUNCTION__, $link);
         if (empty($link)) {
             // log::warn('Task(' . self::$taskid . ') Get Task link Fail...Stand By...');
             return false;
         }
         $link = $this->link_uncompress($link);
-        // var_dump($link);
+        var_dump(__FUNCTION__, $link);
         if (empty($link['url'])) {
             // log::warn('Task(' . self::$taskid . ') Get Task url Fail...Stand By...');
             return false;
@@ -1437,6 +1437,7 @@ class phpspider
      */
     public function request_url($url, $link = array())
     {
+        var_dump(__FUNCTION__, $url, $link);
         $time_start = microtime(true);
 
         //$url = "http://www.qiushibaike.com/article/117568316";
@@ -1846,6 +1847,7 @@ class phpspider
             'try_num' => isset($link['try_num']) ? $link['try_num'] : 0,
             'max_try' => isset($link['max_try']) ? $link['max_try'] : self::$configs['max_try'],
             'depth' => isset($link['depth']) ? $link['depth'] : 0,
+            'md5' => isset($link['md5']) ? $link['md5'] : md5($link['url']),
         );
 
         return $link;
@@ -1882,6 +1884,7 @@ class phpspider
                     $fields = $return;
                 }
             }
+            var_dump([__FUNCTION__,$fields,self::$configs['export']]);
 
             if (isset($fields) && is_array($fields)) {
                 $fields_num = $this->incr_fields_num();
@@ -1913,7 +1916,7 @@ class phpspider
                     $fields[self::$configs['export']['spider_original_url_column']] = $page['url'];
                 if (!empty(self::$configs['export'])) {
                     self::$export_type = isset(self::$configs['export']['type']) ? self::$configs['export']['type'] : '';
-                    // var_dump(['function' => __FUNCTION__, 'export_type' => self::$export_type]);
+                    var_dump([ __FUNCTION__,self::$export_type]);
                     if (self::$export_type == 'csv') {
                         // util::put_file(self::$export_file, // util::format_csv($fields) . "\n", FILE_APPEND);
                     } elseif (self::$export_type == 'sql') {
@@ -1921,7 +1924,8 @@ class phpspider
                         // util::put_file(self::$export_file, $sql . ";\n", FILE_APPEND);
                     } elseif (self::$export_type == 'db') {
                         $row = db::get_one("SELECT * FROM `" . self::$export_table . "` WHERE `" . self::$configs['export']['unique_column'] . "` = '" . $url . "'");
-                        if (empty($row)) {
+                        var_dump($row);
+                        if (empty([__FUNCTION__, $row])) {
                             db::insert(self::$export_table, $fields);
                         } else {
                             db::update(self::$export_table, $fields, ["`" . self::$configs['export']['unique_column'] . "` = '" . $url . "'"]);
