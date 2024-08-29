@@ -14,7 +14,7 @@ insert_final_newline = false
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{yml,yaml,html,css,js,json,.php}]
+[*.{yml,yaml,html,css,js,json,php}]
 indent_size = 2
 max_line_length = 3600
 
