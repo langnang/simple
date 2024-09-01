@@ -14,7 +14,7 @@ class WebSpiderController
   {
     $configs = json_decode(file_get_contents(__DIR__ . '/../../../../../../../../storage/data/phpspider.json'), true);
     $contents = $configs['contents'];
-    return view('web-spider::index', [
+    return view(config('this.alias') . '::index', [
       'configs' => $configs,
       "contents" => $contents,
     ]);
@@ -26,7 +26,7 @@ class WebSpiderController
     $contents = $configs['contents'];
     $content = $contents[$request->input('slug')];
 
-    view('web-spider::content', [
+    view(config('this.alias') . '::content', [
       'configs' => $configs,
       "contents" => $contents,
       "content" => $content,
@@ -54,7 +54,7 @@ class WebSpiderController
     ];
     $config['max_fields'] = 100;
 
-    view('web-spider::ob-spider', [
+    view(config('this.alias') . '::ob-spider', [
       'configs' => $configs,
       "contents" => $contents,
       "content" => $content,
@@ -68,7 +68,7 @@ class WebSpiderController
    */
   public function create()
   {
-    return view('web-spider::create');
+    return view(config('this.alias') . '::create');
   }
 
   /**
@@ -88,7 +88,7 @@ class WebSpiderController
    */
   public function show($id)
   {
-    return view('web-spider::show');
+    return view(config('this.alias') . '::show');
   }
 
   /**
@@ -98,7 +98,7 @@ class WebSpiderController
    */
   public function edit($id)
   {
-    return view('web-spider::edit');
+    return view(config('this.alias') . '::edit');
   }
 
   /**

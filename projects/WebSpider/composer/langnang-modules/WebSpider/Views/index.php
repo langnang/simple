@@ -8,7 +8,7 @@
       <div class="list-group">
 
         <?php foreach ($configs['contents'] ?? [] as $slug => $content): ?>
-          <a href="web-spider/content?slug=<?php echo $slug ?>" class="list-group-item list-group-item-action py-2">
+          <a href="<?php _e(config('this.alias')) ?>/content?slug=<?php echo $slug ?>" class="list-group-item list-group-item-action py-2">
             <?php echo $slug; ?>
             <small><?php echo $content['description'] ?? ''; ?></small>
           </a>
