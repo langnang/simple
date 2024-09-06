@@ -1,11 +1,11 @@
-name: 🚀 Deploy b7_34048879 on push with FTP
+name: 🚀 Deploy WebSpider on push with FTP
 
 on:
   push:
     branches:
       - master
     paths:
-      - "projects/webspider/**"
+      - "projects/WebSpider/**"
 
 jobs:
   deploy:

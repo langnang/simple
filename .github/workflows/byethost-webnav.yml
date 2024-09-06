@@ -1,4 +1,4 @@
-name: 🚀 Deploy b7_34048879 on push with FTP
+name: 🚀 Deploy WebNav on push with FTP
 
 on:
   push:
