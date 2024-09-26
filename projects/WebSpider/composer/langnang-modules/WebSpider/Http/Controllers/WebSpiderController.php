@@ -12,6 +12,8 @@ class WebSpiderController
    */
   public function index()
   {
+    $contents = \DB::table('_contents');
+    // var_dump($contents);
     $configs = json_decode(file_get_contents(__DIR__ . '/../../../../../../../../storage/data/phpspider.json'), true);
     $contents = $configs['contents'];
     return view(config('this.alias') . '::index', [
